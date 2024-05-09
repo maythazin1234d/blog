@@ -8,6 +8,8 @@
  {{ $article->created_at->diffForHumans() }}
  </div>
  <p class="card-text">{{ $article->body }}</p>
+ <p class="card-text">{{ $article->category_id }}</p>
+
 
  <a class="btn btn-primary"
  href="{{ url("/articles/edit/$article->id") }}">

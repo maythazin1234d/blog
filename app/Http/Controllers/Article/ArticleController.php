@@ -45,7 +45,7 @@ public function create()
  $validator = validator(request()->all(), [
  'title' => 'required',
  'body' => 'required',
- 'category_id' => 'required',
+ 'category_name' => 'required',
  ]);
 
  if($validator->fails()) {
@@ -54,11 +54,11 @@ public function create()
     $article = new Article;
     $article->title = request()->title;
     $article->body = request()->body;
-    $article->category_id = request()->category_id;
+    $article->category_id = request()->category_name;
     $article->save();
     return redirect('/articles');
    }
-   
+ 
    public function edit($id)
    {
     $data = [
@@ -75,7 +75,7 @@ public function create()
     $validator = validator(request()->all(), [
     'title' => 'required',
     'body' => 'required',
-    'category_id' => 'required',
+    'category_name' => 'required',
     ]);
    
     if($validator->fails()) {
@@ -84,15 +84,12 @@ public function create()
        $article = Article::find($id);
        $article->title = request()->title;
        $article->body = request()->body;
-       $article->category_id = request()->category_id;
+       $article->category_id = request()->category_name;
        $article->update();
        return redirect('/articles');
       }
 
-
-
-
-
+      
    public function delete($id)
    {
     $article = Article::find($id);

@@ -27,9 +27,9 @@
  </div>
  <div class="mb-3">
  <label>Category</label>
- <select class="form-select" name="category_id">
+ <select class="form-select" name="category_name">
  @foreach($categories as $category)
- <option value="{{ $category['id'] }}">
+ <option value="{{ $category['name'] }}">
  {{ $category['name'] }}
  </option>
  @endforeach

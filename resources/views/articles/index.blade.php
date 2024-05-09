@@ -19,6 +19,7 @@
  {{ $article->created_at->diffForHumans() }}
  </div>
  <p class="card-text">{{ $article->body }}</p>
+ <p class="card-text">{{ $article->category_id }}</p>
  <a class="card-link"
  href="{{ url("/articles/detail/$article->id") }}" >
  View Detail &raquo;
