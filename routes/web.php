@@ -35,6 +35,7 @@ use App\Http\Controllers\Article\ArticleController;
 
 Route::get('/', [ArticleController::class, 'index']);
 Route::get('/articles', [ArticleController::class, 'index']);
+
 Route::get('/articles/detail/{id}', [
 ArticleController::class,
 'detail'
@@ -48,10 +49,24 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
 Route::get('/articles/add', [ArticleController::class, 'add']);
+
 Route::post('/articles/add', [
 ArticleController::class,
 'create'
 ]);
+
+
+
+Route::get('/articles/edit/{id}', [ArticleController::class, 'edit']);
+
+Route::post('/articles/edit/{id}', [
+ArticleController::class,
+'updateArticle'
+]);
+
+
+
+
 Route::get('/articles/delete/{id}', [
 ArticleController::class,
 'delete'
